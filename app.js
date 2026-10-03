@@ -1,6 +1,13 @@
 const CONTACT_API_URL = 'https://formsubmit.co/ajax/phillywedotransformations@gmail.com';
-const eventConfig = { date: 'Coming soon' };
-document.querySelectorAll('[data-event-date]').forEach(el => el.textContent = eventConfig.date);
+const eventConfig = {
+  date: 'Saturday, October 17, 2026',
+  time: '9:00 AM',
+  venue: 'Discovery Center',
+  address: '3401 Reservoir Drive, Philadelphia, PA 19121'
+};
+for (const [field, value] of Object.entries(eventConfig)) {
+  document.querySelectorAll(`[data-event-${field}]`).forEach(el => el.textContent = value);
+}
 const form = document.getElementById('rsvp-form');
 const formStatus = document.getElementById('form-status');
 const submitButton = form.querySelector('button[type="submit"]');

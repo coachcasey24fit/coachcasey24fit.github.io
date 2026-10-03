@@ -67,10 +67,10 @@ h2{font-size:clamp(32px,4.2vw,64px);margin:18px 0}
 .rsvp-card{background:var(--ink);color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:7vw;padding:65px 7vw}
 .rsvp h2{margin-bottom:22px}
 .rsvp-sub{color:#aaa;line-height:1.6;max-width:390px}
-.event-details{display:flex;gap:28px;margin-top:38px}
+.event-details{display:flex;flex-wrap:wrap;gap:28px;margin-top:38px}
 .event-details div{border-left:2px solid var(--lime);padding-left:12px}
 .event-details small{display:block;color:var(--lime);font-size:9px;letter-spacing:.14em;margin-bottom:6px}
-.event-details b{font-size:12px}
+.event-details b{display:block;max-width:230px;font-size:12px;line-height:1.5}
 form{display:grid;gap:18px;align-content:center}
 label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#aaa}
 input,select{display:block;width:100%;background:transparent;border:0;border-bottom:1px solid #555;padding:13px 0;color:#fff;font:16px Arial,sans-serif;outline:none}
