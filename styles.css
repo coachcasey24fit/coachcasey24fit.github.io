@@ -307,6 +307,25 @@ footer p{color:#aaa}.eyebrow{color:#bbb}.links .eyebrow,.community .eyebrow{colo
 .habit-status{min-height:1.5em;font-size:13px}
 .reset-card ol{padding-left:22px}.reset-card li{padding:8px 0}.reset-card strong{color:#ff9d2e}
 .weekly-rhythm{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-@media(max-width:1050px){.blueprint-phase-grid,.weekly-rhythm{grid-template-columns:1fr 1fr}.blueprint-heading,.scorecard-wrap{grid-template-columns:1fr}}
-@media(max-width:800px){.blueprint-tabs{display:grid}.blueprint-tab{text-align:left}.blueprint-panel{padding:25px 18px}.blueprint-phase-grid,.weekly-rhythm,.scorecard,.client-blueprint-grid{grid-template-columns:1fr}.blueprint-actions .button{width:100%}}
+.coach-video-block{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.55fr);gap:30px;align-items:center;margin:36px 0;padding:26px;background:#080808;border:1px solid #3a3a3a;border-top:4px solid #ff7200}
+.coach-video-frame{position:relative;background:#000;box-shadow:0 18px 50px rgba(0,0,0,.45)}
+.coach-video-frame video{display:block;width:100%;aspect-ratio:16/9;background:#000;object-fit:contain}
+.coach-video-copy h3,.coach-lab-heading h3,.coach-mission h3{font-size:clamp(26px,3vw,42px);line-height:1.12;margin:15px 0}
+.coach-video-copy>p:not(.eyebrow),.coach-lab-heading>p:not(.eyebrow),.coach-mission>div>p:not(.eyebrow){color:#c9c9c3;line-height:1.7}
+.coach-video-copy ul{padding-left:20px;color:#ededed;line-height:1.65}.coach-video-copy li::marker{color:#ff7200}
+.coach-lab{margin:44px 0;padding:34px;background:#0a0a0a;border:1px solid #3b3b3b}
+.coach-lab-heading{max-width:900px}
+.coach-lesson-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:30px 0 18px}
+.coach-lesson-tab{appearance:none;border:1px solid #4a4a4a;background:#1d1d1d;color:#d0d0d0;padding:14px 18px;font-weight:800;cursor:pointer}
+.coach-lesson-tab.is-active{background:#ff7200;border-color:#ff7200;color:#090909}.coach-lesson-tab:focus-visible,.practice-reveal:focus-visible,.blueprint-reset:focus-visible{outline:3px solid #ffb476;outline-offset:3px}
+.coach-lesson-panel{display:grid;grid-template-columns:1.12fr .88fr;gap:24px;padding:26px;background:#171717;border-left:5px solid #ff7200}
+.coach-lesson-panel[hidden]{display:none}.lesson-number{display:block;color:#ff9d2e;font-size:12px;font-weight:900;letter-spacing:.13em}
+.coach-lesson-panel h4{font-size:clamp(24px,2.5vw,34px);margin:10px 0 18px}.coach-lesson-panel ol{margin:0;padding-left:23px;color:#d2d2d2;line-height:1.7}.coach-lesson-panel li{padding:5px 0}.coach-lesson-panel strong{color:#fff}
+.practice-card{align-self:stretch;padding:24px;background:#242424;border:1px solid #454545}.practice-label{color:#ff9d2e;font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.practice-card>p:not(.practice-label){line-height:1.65;color:#ddd}
+.practice-reveal{border:0;background:#ff7200;color:#070707;padding:13px 16px;font-weight:900;cursor:pointer}.practice-sample{margin-top:18px;padding:17px;background:#0c0c0c;border-left:3px solid #ff7200}
+.coach-mission{display:grid;grid-template-columns:.78fr 1.22fr;gap:38px;margin-top:28px;padding-top:32px;border-top:1px solid #3c3c3c}
+.coach-mission-checklist label{display:flex;align-items:flex-start;gap:12px;padding:13px 0;border-bottom:1px solid #353535;color:#eee;font-size:15px;line-height:1.5;text-transform:none;letter-spacing:0}.coach-mission-checklist input{width:20px;height:20px;flex:0 0 20px;margin-top:1px;accent-color:#ff7200}
+.mission-meter{height:12px;margin-top:22px;background:#333;overflow:hidden}.mission-meter span{display:block;width:0;height:100%;background:#ff7200;transition:width .3s ease}.coach-mission-checklist .habit-status{color:#ffb476;margin:12px 0 0}
+@media(max-width:1050px){.blueprint-phase-grid,.weekly-rhythm{grid-template-columns:1fr 1fr}.blueprint-heading,.scorecard-wrap,.coach-video-block,.coach-mission{grid-template-columns:1fr}.coach-video-copy{padding:5px 3px 8px}}
+@media(max-width:800px){.blueprint-tabs{display:grid}.blueprint-tab{text-align:left}.blueprint-panel{padding:25px 18px}.blueprint-phase-grid,.weekly-rhythm,.scorecard,.client-blueprint-grid,.coach-lesson-panel{grid-template-columns:1fr}.blueprint-actions .button{width:100%}.coach-lab{padding:24px 16px}.coach-lesson-tabs{display:grid}.coach-lesson-tab{text-align:left}.coach-video-block{padding:15px}}
 
