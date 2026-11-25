@@ -64,6 +64,44 @@ document.querySelectorAll('[data-interest]').forEach(link => {
   });
 });
 
+const blueprintTabs = [...document.querySelectorAll('[data-blueprint-target]')];
+const blueprintPanels = [...document.querySelectorAll('.blueprint-panel')];
+function showBlueprint(panelId) {
+  blueprintTabs.forEach(tab => {
+    const selected = tab.dataset.blueprintTarget === panelId;
+    tab.classList.toggle('is-active', selected);
+    tab.setAttribute('aria-selected', String(selected));
+  });
+  blueprintPanels.forEach(panel => { panel.hidden = panel.id !== panelId; });
+}
+blueprintTabs.forEach(tab => tab.addEventListener('click', () => showBlueprint(tab.dataset.blueprintTarget)));
+
+const habitInputs = [...document.querySelectorAll('[data-client-habit]')];
+const habitStatus = document.getElementById('habit-status');
+const habitStorageKey = 'coachCaseyClientHabits';
+function saveClientHabits() {
+  try {
+    const state = Object.fromEntries(habitInputs.map(input => [input.dataset.clientHabit, input.checked]));
+    localStorage.setItem(habitStorageKey, JSON.stringify(state));
+    const complete = habitInputs.filter(input => input.checked).length;
+    habitStatus.textContent = `${complete} of ${habitInputs.length} daily anchors complete. Saved on this device.`;
+  } catch {
+    habitStatus.textContent = 'Your browser did not save the checklist, but you can still use it on this page.';
+  }
+}
+if (habitInputs.length) {
+  try {
+    const savedHabits = JSON.parse(localStorage.getItem(habitStorageKey) || '{}');
+    habitInputs.forEach(input => { input.checked = Boolean(savedHabits[input.dataset.clientHabit]); });
+  } catch {}
+  habitInputs.forEach(input => input.addEventListener('change', saveClientHabits));
+  document.getElementById('reset-client-habits').addEventListener('click', () => {
+    habitInputs.forEach(input => { input.checked = false; });
+    saveClientHabits();
+  });
+  saveClientHabits();
+}
+
 const coachTrack = document.querySelector('.coach-track');
 const coachCards = [...document.querySelectorAll('.coach-card')];
 let coachIndex = 0;
